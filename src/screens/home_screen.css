@@ -1,0 +1,120 @@
+.popup-content {
+    margin: auto;
+    background: rgb(255, 255, 255);
+    height: 200px;
+    width: 1000px;
+    padding: 5px;
+}
+
+.popup-arrow {
+    color: white;
+}
+[role='tooltip'].popup-content {
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 5px 5px 5px;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+[data-popup='tooltip'].popup-overlay {
+    background: transparent;
+}
+
+button {
+    border-radius: 8px;
+    border: 2px solid #0267FF;
+    padding: 0.4em 1.2em;
+    width: 240px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #0267FF;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.headerButton {
+    border-radius: 0px;
+    border: 2px solid transparent;
+    padding: 0.4em 1.2em;
+    width: 0px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.headerButton:hover {
+    border-radius: 0px;
+    border: 2px solid transparent;
+    padding: 0.4em 1.2em;
+    width: 0px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transform: rotate(-45deg);
+    transition: border-color 0.25s;
+}
+
+.save-button:hover {
+    border-radius: 8px;
+    border: 2px solid rgb(52, 213, 52);
+    padding: 0.4em 1.2em;
+    width: 240px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: rgb(52, 213, 52);
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {  
+    border: 2px solid #0267FF;
+    background-color: white;
+    color: black;
+}
+
+/* button:focus, button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+} */
+
+.swiper-button-prev {
+    left: 45% !important;
+    top: 80% !important;
+    transform-origin: left center;
+    background-color: rgb(242, 242, 242);
+    background-image: none;
+    --swiper-navigation-size:20px;
+    --swiper-navigation-color: rgb(25, 25, 25);
+    padding-left: 10px;
+    padding-right:12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 100%;
+}
+
+.swiper-button-next {
+    left: 50% !important;
+    top: 80% !important;
+    transform-origin: left center;
+    background-color: rgb(242, 242, 242);
+    background-image: none;
+    --swiper-navigation-size:20px;
+    --swiper-navigation-color: rgb(25, 25, 25);
+    padding-left: 12px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 100%;
+    margin-left: 5%;
+}

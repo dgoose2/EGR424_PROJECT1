@@ -1,0 +1,11 @@
+.outerContainer {
+    background-color: white;
+    width: 65%;
+    height: 125px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
