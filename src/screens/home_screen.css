@@ -95,6 +95,33 @@ button {
     transition: border-color 0.25s;
 }
 
+.clear-button {
+    border-radius: 8px;
+    border: 2px solid #DC676C;
+    padding: 0.4em 1.2em;
+    width: 500px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #DC676C;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.clear-button:hover {
+    border-radius: 8px;
+    border: 2px solid #DC676C;
+    padding: 0.4em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #DC676C;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
 button:hover {  
     /* border: 2px solid #0267FF; */
     /* background-color: white; */

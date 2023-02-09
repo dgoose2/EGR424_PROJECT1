@@ -3,9 +3,10 @@ import axios from 'axios';
 import Popup from 'reactjs-popup';
 import './home_screen.css'
 import CHUCK from '../assets/chun.avif';
+import TRASH from '../assets/trash.png';
 
 import {db} from '../firebase';
-import {collection, addDoc, getDoc, getDocs, QuerySnapshot} from "firebase/firestore";
+import {collection, addDoc, getFirestore, getDoc, getDocs, doc,  QuerySnapshot, deleteDoc} from "firebase/firestore";
 import './home_screen.css';
 import InitialJoke from '../components/initial_joke/initial_joke';
 import SavedJoke from '../components/saved_joke/saved_joke';
@@ -23,9 +24,9 @@ function HomeScreen() {
   const [jokes, setJokes] = useState([]);
   const [timeStamp, setTimeStamp] = useState('');
   const [initialJoke, setInitialJoke] = useState('');
+  const db = getFirestore();
 
   const getRandomJoke = async () => {
-    console.log('Requesting random joke...');
     const response = await axios.get('https://api.chucknorris.io/jokes/random');
     const jokeData = response.data['value'];
     const time = response.data['created_at'];
@@ -34,7 +35,6 @@ function HomeScreen() {
   }
   
   const getJokes = async () => {
-    console.log('Getting data from firestore...');
     await getDocs(collection(db, "jokes"))
     .then((QuerySnapshot) => {
       const newData = QuerySnapshot.docs
@@ -44,7 +44,6 @@ function HomeScreen() {
   }
   
   const addJoke = async (joke, timeStamp) => {
-    console.log('Sending data to firestore...');
     try {
       const docRef = await addDoc(collection(db, "jokes"), {
         joke: joke,
@@ -52,7 +51,19 @@ function HomeScreen() {
       });
       getJokes();
       getRandomJoke();
-      console.log('Successful');
+    }catch (e) {
+      console.log(e);
+    }
+  }
+  
+  const clearJokes = async () => {
+    try {
+      for(var i = 0; i < jokes.length; i++) {
+        const docRef = doc(db, "jokes", jokes[i]['id']);
+        await deleteDoc(docRef);
+      }
+      getJokes();
+      getRandomJoke();
     }catch (e) {
       console.log(e);
     }
@@ -62,7 +73,6 @@ function HomeScreen() {
     getJokes();
     getRandomJoke();
   }, [])
-  
 
   return (
     <div>
@@ -85,14 +95,17 @@ function HomeScreen() {
             addJoke(initialJoke, timeStamp);
           }} className='save-button' style={{width: '240px'}}>save</button>
         </div>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '15px'}}>
+          <div>
+            <button className='clear-button' onClick={() => {clearJokes();}}>clear</button>
+          </div>
+        </div>
         <div style={{marginTop: '100px'}}>
           <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={0}
           slidesPerView={4}
           navigation
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
           style={{marginTop: '50px', paddingLeft: '5%'}}
           >
             {
@@ -123,14 +136,17 @@ function HomeScreen() {
             addJoke(initialJoke, timeStamp);
           }} className='save-button'>save</button>
         </div>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '15px'}}>
+          <div>
+            <button style={{width: '410px'}} className='clear-button' onClick={() => {clearJokes();}}>clear</button>
+          </div>
+        </div>
         <div style={{marginTop: '30px'}}>
           <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={0}
           slidesPerView={2}
           navigation
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
           style={{marginTop: '50px', paddingLeft: '9%'}}
           >
             {
