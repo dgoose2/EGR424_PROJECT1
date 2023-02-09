@@ -8,8 +8,8 @@ function InitialJoke(props) {
   return (
     <div className="outerContainer">
       <div style={{height: '30px', width: '40px', backgroundColor: color, position: 'absolute', top: '0px', left: '0px', borderRadius: '5px', borderTopLeftRadius: '10px'}}/>
-      <div style={{width: '80%'}}>
-        <h2 style={{textAlign: 'center'}}>{props.joke}</h2>
+      <div style={{width: '70%'}}>
+        <h2 className='initial-joke' style={{textAlign: 'center'}}>{props.joke}</h2>
       </div>
       <div>
         <img style={{height: '40px', position: 'absolute', top: '10px', right: '10px'}} src={CHUCK}></img>

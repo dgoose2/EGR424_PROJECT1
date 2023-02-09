@@ -60,28 +60,47 @@ button {
     background-color: transparent;
     color: white;
     cursor: pointer;
-    transform: rotate(-45deg);
     transition: border-color 0.25s;
+    box-shadow: 0 2px 15px 0 transparent;
+
 }
 
-.save-button:hover {
+.save-button {
     border-radius: 8px;
-    border: 2px solid rgb(52, 213, 52);
+    border: 2px solid #25C077;
     padding: 0.4em 1.2em;
     width: 240px;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: rgb(52, 213, 52);
+    background-color: #25C077;
     color: white;
     cursor: pointer;
     transition: border-color 0.25s;
 }
 
+.save-button:hover {
+    border-radius: 8px;
+    border: 2px solid #25C077;
+    padding: 0.4em 1.2em;
+    width: 240px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #25C077;
+    color: white;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
 button:hover {  
-    border: 2px solid #0267FF;
-    background-color: white;
-    color: black;
+    /* border: 2px solid #0267FF; */
+    /* background-color: white; */
+    /* color: w; */
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 /* button:focus, button:focus-visible {
@@ -117,4 +136,26 @@ button:hover {
     padding-bottom: 7px;
     border-radius: 100%;
     margin-left: 5%;
+}
+
+.mobile-mode {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .mobile-mode {
+        display: revert;
+    }
+
+    .web-mode {
+        display: none;
+    }
+
+    .save-button {
+        width: 200px;
+    }
+
+    button {
+        width: 200px;
+    }
 }
