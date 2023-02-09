@@ -7,7 +7,6 @@ function InitialJoke(props) {
 
   return (
     <div className="outerContainer">
-      <div style={{height: '30px', width: '40px', backgroundColor: color, position: 'absolute', top: '0px', left: '0px', borderRadius: '5px', borderTopLeftRadius: '10px'}}/>
       <div style={{width: '70%'}}>
         <h2 className='initial-joke' style={{textAlign: 'center'}}>{props.joke}</h2>
       </div>

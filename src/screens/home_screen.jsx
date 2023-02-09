@@ -109,10 +109,7 @@ function HomeScreen() {
       </div>
       
       <div className='mobile-mode'>
-        <button className='headerButton' onClick={() => window.open( 'https://images02.military.com/sites/default/files/2021-04/chucknorris.jpeg', '_blank')}>
-          <img style={{height: '70px'}} src={CHUCK}></img>
-        </button>
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '50px'}}>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '90px'}}>
           <h1 style={{textAlign: 'center', fontSize: '34px'}}>welcome to dank norris</h1>
         </div>
         <div style={{display: 'flex', justifyContent: 'center', paddingTop: '10px'}}>
