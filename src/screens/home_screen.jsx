@@ -1,19 +1,16 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Popup from 'reactjs-popup';
-import './home_screen.css'
-import CHUCK from '../assets/chun.avif';
-import TRASH from '../assets/trash.png';
-
 import {db} from '../firebase';
-import {collection, addDoc, getFirestore, getDoc, getDocs, doc,  QuerySnapshot, deleteDoc} from "firebase/firestore";
-import './home_screen.css';
-import InitialJoke from '../components/initial_joke/initial_joke';
-import SavedJoke from '../components/saved_joke/saved_joke';
-
+import { useEffect, useState } from 'react';
+import {collection, addDoc, getFirestore, getDocs, doc, deleteDoc} from "firebase/firestore";
 import {Navigation, Pagination, Scrollbar, A11y} from "swiper";
 import {Swiper, SwiperSlide} from 'swiper/react';
 
+import axios from 'axios';
+import CHUCK from '../assets/chun.avif';
+import InitialJoke from '../components/initial_joke/initial_joke';
+import SavedJoke from '../components/saved_joke/saved_joke';
+
+import './home_screen.css';
+import './home_screen.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
